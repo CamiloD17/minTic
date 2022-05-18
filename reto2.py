@@ -4,7 +4,6 @@ def cliente(informacion: dict) -> dict:
     edad = informacion["edad"]
     primer_ingreso = informacion["primer_ingreso"]
     apto = True
-    global descuento
 
     if edad > 18:
         valor_boleta = 20000
@@ -21,7 +20,7 @@ def cliente(informacion: dict) -> dict:
         valor_boleta = "N/A"
     total_boleta = valor_boleta
 
-    if primer_ingreso == True or primer_ingreso == True:
+    if primer_ingreso == True:
         if edad > 18:
             descuento = 0.05
         elif edad >= 15 and edad <= 18:
