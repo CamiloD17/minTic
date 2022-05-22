@@ -28,8 +28,9 @@ def AutoPartes(ventas: list):
 
 def consultaRegistro(ventas, IdProducto):
     nuevodic = ventas
+    i = 0
     if IdProducto in nuevodic.keys():
-        for i in range(len(nuevodic[IdProducto])):
+        while i in range(len(nuevodic[IdProducto])):
             dProducto = nuevodic.get(IdProducto)[i][0]
             pnProducto = nuevodic.get(IdProducto)[i][1]
             cvProducto = nuevodic.get(IdProducto)[i][2]
@@ -37,7 +38,7 @@ def consultaRegistro(ventas, IdProducto):
             nComprador = nuevodic.get(IdProducto)[i][4]
             cComprador = nuevodic.get(IdProducto)[i][5]
             fVenta = nuevodic.get(IdProducto)[i][6]
-
+            i += 1
             print(
                 f"Producto consultado : {IdProducto}  Descripción  {dProducto}  #Parte  {pnProducto}  Cantidad vendida  {cvProducto}  Stock  {sProducto}  Comprador {nComprador}  Documento  {cComprador}  Fecha Venta  {fVenta}"
             )
