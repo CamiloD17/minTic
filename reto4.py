@@ -9,15 +9,14 @@ def ordenes(rutinaContable):
     sumaEnVector = 0
     for i in range(len(rutinaContable)):
         for j in range(len(rutinaContable[i]) - 1):
-            for k in range(len(rutinaContable[j - 2]) - 2):
-                numero = int(rutinaContable[i][0])
-                sin_string = list(
-                    filter(
-                        lambda x: isinstance(x, int) == True
-                        or isinstance(x, float) == True,
-                        rutinaContable[i][j + 1],
-                    )
+            numero = int(rutinaContable[i][0])
+            sin_string = list(
+                filter(
+                    lambda x: isinstance(x, int) == True
+                    or isinstance(x, float) == True,
+                    rutinaContable[i][j + 1],
                 )
+            )
 
             multiplica = reduce(lambda x, y: x * y, sin_string)
             sumaEnVector += multiplica
