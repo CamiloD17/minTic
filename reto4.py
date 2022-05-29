@@ -2,19 +2,15 @@ from functools import reduce
 
 
 def ordenes(rutinaContable):
-    suma = []
-    sumaEnVector = 0
     print(
         "------------------------ Inicio Registro diario ---------------------------------"
     )
-
+    suma = []
+    sumaEnVector = 0
     for i in range(len(rutinaContable)):
         for j in range(len(rutinaContable[i]) - 1):
             for k in range(len(rutinaContable[j - 2]) - 2):
-                numero = rutinaContable[i][0]
-                codigo = rutinaContable[i][j + 1][k]
-                productos = rutinaContable[i][j + 1][k]
-                cantidad = rutinaContable[i][j + 1][k]
+                numero = int(rutinaContable[i][0])
                 sin_string = list(
                     filter(
                         lambda x: isinstance(x, int) == True
@@ -28,12 +24,12 @@ def ordenes(rutinaContable):
         suma.append(sumaEnVector)
 
         if i > 0:
-            total = suma[i] - suma[i - 1]
+            cantidad = suma[i] - suma[i - 1]
         else:
-            total = suma[i]
-        if total < 600000:
-            total += 25000
-        print(f"La factura {numero} tiene un total en pesos de {total:,.2f}")
+            cantidad = suma[i]
+        if cantidad < 600000:
+            cantidad += 25000
+        print(f"La factura {numero} tiene un total en pesos de {cantidad:,.2f}")
 
     print(
         "-------------------------- Fin Registro diario ----------------------------------"
@@ -42,15 +38,8 @@ def ordenes(rutinaContable):
 
 ordenes(
     [
-        [1201, ("5464", 4, 25842.99), ("7854", 18, 23254.99), ("8521", 9, 48951.95)],
-        [1202, ("8756", 3, 115362.58), ("1112", 18, 2354.99)],
-        [
-            1203,
-            ("2547", 1, 125698.20),
-            ("2635", 2, 135645.20),
-            ("1254", 1, 13645.20),
-            ("9965", 5, 1645.20),
-        ],
-        [1204, ("9635", 7, 11.99), ("7733", 11, 18.99), ("88112", 5, 390.95)],
+        [6589, ("9874", 1, 125698.20), ("88112", 2, 135645.20), ("3218", 4, 13645.20)],
+        [6590, ("5236", 8, 11.99), ("7733", 11, 18.99), ("88112", 5, 390.95)],
+        [6591, ("7812", 2, 11.99), ("9652", 11, 18.99)],
     ]
 )
