@@ -21,12 +21,10 @@ def cliente(informacion: dict) -> dict:
     total_boleta = valor_boleta
 
     if primer_ingreso == True:
-        if edad > 18:
+        if edad > 18 or edad >= 7 and edad < 15::
             descuento = 0.05
         elif edad >= 15 and edad <= 18:
             descuento = 0.07
-        elif edad >= 7 and edad < 15:
-            descuento = 0.05
         if edad > 7:
             total_boleta = valor_boleta - (valor_boleta * descuento)
 
