@@ -1,5 +1,7 @@
 import pandas as pd
 
+rutaFileCsv = "https://github.com/luisguillermomolero/MisionTIC2022_2/blob/master/Modulo1_Python_MisionTIC2022_Main/Semana_5/Reto/movies.csv?raw=true"
+
 
 def listaPeliculas(rutaFileCsv: str) -> str:
     if ".csv" in rutaFileCsv:
@@ -9,14 +11,12 @@ def listaPeliculas(rutaFileCsv: str) -> str:
             resultado = pd.pivot_table(
                 subconjunto, index=["Country", "Language"], values=["Gross Earnings"]
             )
-            return print(resultado.head(10))
+            return resultado.head(10)
         except:
-            print("Error al leer el archivo de datos.")
+            return print("Error al leer el archivo de datos.")
 
     else:
-        return print(resultado)
+        print("Extensión inválida.")
 
 
-listaPeliculas(
-    "https://github.com/luisguillermomolero/MisionTIC2022_2/blob/master/Modulo1_Python_MisionTIC2022_Main/Semana_5/Reto/movies.csv?raw=true"
-)
+print(listaPeliculas(rutaFileCsv))
