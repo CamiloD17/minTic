@@ -44,16 +44,3 @@ def consultaRegistro(ventas, IdProducto):
             )
     else:
         print(f"No hay registro de venta de ese producto")
-
-
-consultaRegistro(
-    AutoPartes(
-        [
-            (9852, "Culata", "XC9875", 2, 165, "Luis Molero", 3455846, "14/06/2020"),
-            (9852, "Culata", "XC9875", 2, 165, "Jose Mejia", 1355846, "14/06/2020"),
-            (2564, "Cárter", "PT29872", 2, 32, "Peter Cerezo", 8545436, "14/06/2020"),
-            (5412, "válvula", "AZ8798", 2, 11, "Juan Peña", 568975, "14/06/2020"),
-        ]
-    ),
-    9852,
-)
