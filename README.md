@@ -1,2 +1,2 @@
 # minTic
-En este repositorio se almacenarán algunos códigos para solucionar diversos retos del programa minTic - UTP.
+En este repositorio se almacenarán algunos códigos para la solución de retos en el programa minTic - UTP.
